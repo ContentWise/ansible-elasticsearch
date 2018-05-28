@@ -1,0 +1,16 @@
+[Unit]
+Description=Elasticsearch
+After=network.target
+
+[Service]
+User={{ elasticsearch_user }}
+Group={{ elasticsearch_group }}
+LimitMEMLOCK=infinity
+LimitNOFILE=100000
+LimitNPROC=32768
+LimitAS=infinity
+ExecStart={{ elasticsearch_install_dir }}/bin/elasticsearch -Epath.conf={{ elasticsearch_install_dir }}/config
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
