@@ -9,7 +9,8 @@ LimitMEMLOCK=infinity
 LimitNOFILE=100000
 LimitNPROC=32768
 LimitAS=infinity
-ExecStart={{ elasticsearch_install_dir }}/bin/elasticsearch -Epath.conf={{ elasticsearch_install_dir }}/config
+Environment=ES_HOME={{ elasticsearch_install_dir }}
+ExecStart={{ elasticsearch_install_dir }}/bin/elasticsearch
 Restart=always
 
 [Install]

@@ -1,5 +1,5 @@
 ---
-elasticsearch_version: "5.4.3"
+elasticsearch_version: "6.2.4"
 elasticsearch_name: elasticsearch-{{ elasticsearch_version }}
 elasticsearch_url: https://artifacts.elastic.co/downloads/elasticsearch/{{ elasticsearch_name }}.tar.gz
 elasticsearch_install_dir: "/opt/{{ elasticsearch_name }}"
