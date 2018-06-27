@@ -1,0 +1,1 @@
+plugin_executable: "{{ 'elasticsearch_plugin' if elasticsearch_version is version('5.0.0', '>=') else 'plugin' }}" # check the exact version that started using new name

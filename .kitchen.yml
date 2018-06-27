@@ -32,3 +32,10 @@ provisioner:
 suites:
   - name: default
   - name: v543
+    provisioner:
+      playbook: test/integration/v543.yml
+  - name: v246
+    provisioner:
+      playbook: test/integration/v246.yml
+    excludes: 
+      - ubuntu-16.04

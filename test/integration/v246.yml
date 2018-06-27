@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - role: contentwise.java
+    - role: contentwise.elasticsearch
+      elasticsearch_version: "2.4.6"
+      elasticsearch_url: https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.6/elasticsearch-2.4.6.tar.gz
+      elasticsearch_plugins:
+        - lang-javascript
+      elasticsearch_extra_config_lines: "script.engine.javascript.inline.update: true\nscript.engine.javascript.inline.search: true"

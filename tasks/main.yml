@@ -37,6 +37,27 @@
     - jvm.options
     - log4j2.properties
 
+- name: fix permissions in config dir
+  file:
+    path: "{{ elasticsearch_install_dir }}/config/"
+    recurse: yes
+    owner: "{{ elasticsearch_user }}"
+    group: "{{ elasticsearch_group }}"
+
+- name: install mandatory plugins
+  shell: "cd {{ elasticsearch_install_dir }} && bin/{{ plugin_executable }} install -b {{ item }}"
+  with_items: "{{ elasticsearch_plugins }}"
+  args:
+    creates: "{{ elasticsearch_install_dir }}/plugins/{{ item }}"
+
+- name: fix permissions in plugins dir
+  file:
+    path: "{{ elasticsearch_install_dir }}/plugins/"
+    recurse: yes
+    owner: "{{ elasticsearch_user }}"
+    group: "{{ elasticsearch_group }}"
+  when:  elasticsearch_plugins != []
+
 - name: create systemd script
   template:
     src: elasticsearch.service.j2
