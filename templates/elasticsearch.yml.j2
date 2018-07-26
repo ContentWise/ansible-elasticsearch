@@ -1,5 +1,7 @@
 {{ elasticsearch_config | to_nice_yaml }}
 
+http.port: {{ elasticsearch_http_port }}
+
 path.data: {{ elasticsearch_path_data }}
 path.logs: {{ elasticsearch_path_logs }}
 
