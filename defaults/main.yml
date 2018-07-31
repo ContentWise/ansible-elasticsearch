@@ -13,3 +13,4 @@ elasticsearch_path_logs: /opt/elasticsearch/log
 elasticsearch_heap_size: "1g"
 elasticsearch_plugins: []  # add a list of plugins here if needed. E.g.: lang-javascript for elasticsearh 2.4.6
 elasticsearch_http_port: 9400
+elasticsearch_java_opts: ""

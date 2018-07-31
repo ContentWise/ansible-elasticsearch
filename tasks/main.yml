@@ -36,6 +36,7 @@
     - elasticsearch.yml
     - jvm.options
     - log4j2.properties
+  notify: restart elasticsearch
 
 - name: fix permissions in config dir
   file:
@@ -64,7 +65,7 @@
     dest: /etc/systemd/system/elasticsearch.service
   notify:
     - reload systemd
-    - restart service
+    - restart elasticsearch
 
 - name: make sure elasticsearch is started
   service:
