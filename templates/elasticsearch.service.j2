@@ -9,8 +9,8 @@ LimitMEMLOCK=infinity
 LimitNOFILE=100000
 LimitNPROC=32768
 LimitAS=infinity
-Environment=ES_HOME={{ elasticsearch_install_dir }}
-Environment=ES_JAVA_OPTS={{ elasticsearch_java_opts }}
+Environment="ES_HOME={{ elasticsearch_install_dir }}"
+Environment="ES_JAVA_OPTS={{ elasticsearch_java_opts }}"
 ExecStart={{ elasticsearch_install_dir }}/bin/elasticsearch
 Restart=always
 
